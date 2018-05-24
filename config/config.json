@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "root",
+    "password": "Kafka#678",
+    "database": "sequel_burgers_db",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "root",
+    "password": "Kafka#678",
+    "database": "sequel_burgers_db",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "root",
+    "password": "Kafka#678",
+    "database": "sequel_burgers_db",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}
