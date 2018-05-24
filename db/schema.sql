@@ -5,8 +5,10 @@ CREATE DATABASE sequel_burgers_db;
 USE sequel_burgers_db;
 
 CREATE TABLE burgers(
-    burger_id INT NOT NULL AUTO_INCREMENT,
+    id INT NOT NULL AUTO_INCREMENT,
     burger_name VARCHAR(200),
     devoured BOOLEAN DEFAULT false,
-    PRIMARY KEY (burger_id)
+    createdAt TIMESTAMP,
+    updatedAt TIMESTAMP,
+    PRIMARY KEY (id)
 );

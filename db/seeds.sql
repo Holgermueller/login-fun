@@ -1,4 +1,4 @@
-###create burgers to populate database
+###create burgers populate database
 USE sequel_burgers_db;
 INSERT INTO burgers (burger_name, devoured) VALUES ('Veggie Burger', false);
 INSERT INTO burgers (burger_name, devoured) VALUES ('Bacon Cheeseburger', false);

@@ -4,26 +4,26 @@ module.exports = function(app) {
 
   // GET route
   app.get("/", function(req, res) {
-    db.BurgerModel.findAll({}).then(function (BurgerModel){
-        return res.json(BurgerModel);
-        console.log(BurgerModel);
+    db.Burgers.findAll({}).then(function (Burgers){
+        return res.json(Burgers);
+        console.log(Burgers);
     });
   });
 
   // POST route
   //req.body
-  app.post("/api/burgers", function(req, res) {
+  app.post("/", function(req, res) {
 
   });
 
   // DELETE route
   // req.params.id
-  app.delete("/api/burgers/:id", function(req, res) {
+  app.delete("/", function(req, res) {
 
   });
 
   // PUT route
-  app.put("/api/burgers", function(req, res) {
+  app.put("/", function(req, res) {
 
   });
 //final brace of module export

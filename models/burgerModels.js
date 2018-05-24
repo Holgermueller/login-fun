@@ -1,7 +1,10 @@
 module.exports = function(sequelize, DataTypes) {
-    let BurgerModel = sequelize.define("BurgerModel", {
+    let Burgers = sequelize.define("Burgers", {
         burger_name: DataTypes.STRING,
         devoured: DataTypes.BOOLEAN
+    },{
+        createdAt: DataTypes.TIMESTAMP,
+        updatedAt: DataTypes.TIMESTAMP
     });
-    return BurgerModel
+    return Burgers
 };
