@@ -1,6 +1,17 @@
 'use strict';
 //event handlers for buttons
 $(function () {
+
+    getBurgers();
+
+    //function to get the burgers
+    function getBurgers(){
+        $.get("/", function(data){
+            burgers = data;
+
+        });
+    }
+
     //function for adding new burgers
     $(".create-form").on("submit", function (event) {
         event.preventDefault();

@@ -1,4 +1,3 @@
-### Create schema for sequel_burgers_db
 DROP DATABASE IF EXISTS sequel_burgers_db;
 CREATE DATABASE sequel_burgers_db;
 
