@@ -1,8 +1,13 @@
+const db = require("../models");
+
 module.exports = function(app) {
 
   // GET route
-  app.get("/api/burgers", function(req, res) {
-
+  app.get("/", function(req, res) {
+    db.BurgerModel.findAll({}).then(function (BurgerModel){
+        return res.json(BurgerModel);
+        console.log(BurgerModel);
+    });
   });
 
   // POST route

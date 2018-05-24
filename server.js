@@ -2,13 +2,11 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const exphbs = require('express-handlebars');
+const db = require("./models");
 
 //create port
-const PORT = process.env.PORT || 8080;
 const app = express();
-
-//require models folder
-const db = require("./models");
+const PORT = process.env.PORT || 8080;
 
 //use public folder
 app.use(express.static("public"));
