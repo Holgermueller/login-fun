@@ -8,7 +8,7 @@ module.exports = function (app) {
             let hbsObject = {
                 burgers: dbBurgers
             };
-            res.render("index", hbsObject);            
+            res.render("index", hbsObject);
             console.log(dbBurgers);
         });
     });
@@ -28,13 +28,13 @@ module.exports = function (app) {
     app.put("/api/burgers/:id", function (req, res) {
         db.Burgers.update({
             devoured: true
-        },{
-            where: {
-                id: req.params.id
-            }
-        }).then(function(dbBurgers){
-            res.json("/");
-        })
+        }, {
+                where: {
+                    id: req.params.id
+                }
+            }).then(function (dbBurgers) {
+                res.json("/");
+            })
     });
     //final brace of module export
 };

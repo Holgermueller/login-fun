@@ -32,17 +32,14 @@ $(function () {
                 method: "PUT",
                 url: "/api/burgers/" + id
             }).then(function () {
-                    console.log("burger now eaten");
-                    location.reload();
-                }
+                console.log("burger now eaten");
+                location.reload();
+            }
             );
         } else {
             $(this).prop("disabled", true);
             // disable button
         }
-     
-
-
     });
 
     //no code below this line
