@@ -25,23 +25,24 @@ $(function () {
     //function for devouring burgers
     $(".devoured").on("click", function (event) {
         let id = $(this).data("id");
-        let nowDevoured = $(this).data("devoured");
-        let burgerNowDevoured = {
-            devoured: 1
-        };
-        $(this).parent().remove("li");
-        $(this).prop("disabled", true);
+        let nowDevoured = $(this).data("nowdevoured");
+        if (nowDevoured === false) {
+            //send PUT request
+            $.ajax({
+                method: "PUT",
+                url: "/api/burgers/" + id
+            }).then(function () {
+                    console.log("burger now eaten");
+                    location.reload();
+                }
+            );
+        } else {
+            $(this).prop("disabled", true);
+            // disable button
+        }
+     
 
-        //send PUT request
-        $.ajax("/api/burgers/" + id, {
-            type: "PUT",
-            data: burgerNowDevoured
-        }).then(
-            function () {
-                console.log("burger now eaten", nowDevoured);
-                location.reload();
-            }
-        );
+
     });
 
     //no code below this line

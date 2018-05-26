@@ -4,8 +4,9 @@
 <!--not eaten-->
 <div class="uneaten">
 <h2>That looks tasty!</h2>
+
 <ul>
-    {{#each burgers}} {{#unless nowDevoured}} {{> burgers/burger-block devoured=false}} {{/unless}} {{/each}}
+    {{#each burgers as |burger| }} {{#unless burger.devoured}} {{> burgers/burger-block burger=burger}} {{/unless}} {{/each}}
 </ul>
 </div>
 
@@ -14,7 +15,7 @@
 <div class="eaten">
 <h2>That was goooood!</h2>
 <ul>
-    {{#each burgers}} {{#if devoured}} {{>burgers/burger-block devoured=true}} {{/if}} {{/each}}
+    {{#each burgers as |burger| }} {{#if burger.devoured}} {{>burgers/burger-block burger=burger}} {{/if}} {{/each}}
 </ul>
 </div>
 

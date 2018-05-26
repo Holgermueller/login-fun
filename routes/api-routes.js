@@ -8,8 +8,8 @@ module.exports = function (app) {
             let hbsObject = {
                 burgers: dbBurgers
             };
-            res.render("index", hbsObject);
-            console.log(dbBurgers[0].burger_name);
+            res.render("index", hbsObject);            
+            console.log(dbBurgers);
         });
     });
 
@@ -24,15 +24,17 @@ module.exports = function (app) {
         });
     });
 
-    // DELETE route
-    // req.params.id
-    app.delete("/", function (req, res) {
-
-    });
-
     // PUT route
-    app.put("/", function (req, res) {
-
+    app.put("/api/burgers/:id", function (req, res) {
+        db.Burgers.update({
+            devoured: true
+        },{
+            where: {
+                id: req.params.id
+            }
+        }).then(function(dbBurgers){
+            res.json("/");
+        })
     });
     //final brace of module export
 };
