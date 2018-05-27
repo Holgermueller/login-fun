@@ -9,18 +9,16 @@ module.exports = function (app) {
                 burgers: dbBurgers
             };
             res.render("index", hbsObject);
-            console.log(dbBurgers);
         });
     });
 
     // POST route
-    //req.body
-    app.post("/", function (req, res) {
+    app.post("/api/burgers/", function (req, res) {
         db.Burgers.create({
-            burger_name: req.body.burger_name,
-            devoured: req.body.devoured
+            burger_name: req.params.burger_name,
+            devoured: req.params.devoured
         }).then(function (dbBurgers) {
-            res.json(dbBurgers);
+            res.render(dbBurgers);
         });
     });
 

@@ -5,15 +5,16 @@ $(function () {
     //function for adding new burgers
     $(".create-form").on("submit", function (event) {
         event.preventDefault();
+        let id = $(this).data("id");
         let newBurger = {
             burger_name: $("#burger").val().trim(),
             devoured: 0
         };
 
         //send POST request on click
-        $.ajax("api/burgers", {
-            type: "POST",
-            data: newBurger
+        $.ajax("/api/burgers", {
+            method: "POST",
+            url: "/api/burgers/"
         }).then(
             function () {
                 console.log("New Burger Added!!");
@@ -38,7 +39,6 @@ $(function () {
             );
         } else {
             $(this).prop("disabled", true);
-            // disable button
         }
     });
 
