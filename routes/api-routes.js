@@ -13,12 +13,9 @@ module.exports = function (app) {
     });
 
     // POST route
-    app.post("/api/burgers/", function (req, res) {
-        db.Burgers.create({
-            burger_name: req.params.burger_name,
-            devoured: req.params.devoured
-        }).then(function (dbBurgers) {
-            res.render(dbBurgers);
+    app.post("/api/burgers", function (req, res) {
+        db.Burgers.create(req.body).then(function (dbBurgers) {
+            console.log(dbBurgers.burger_name);
         });
     });
 
