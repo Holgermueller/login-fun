@@ -14,8 +14,12 @@ module.exports = function (app) {
 
     // POST route
     app.post("/api/burgers", function (req, res) {
-        db.Burgers.create(req.body).then(function (dbBurgers) {
-            console.log(dbBurgers.burger_name);
+        let  newBurger; //= {burger_name: $("#burger").val().trim()};
+        db.Burgers.create({
+            burger_name: req.body.newBurger
+            //devoured: req.body.devoured
+        }).then(function (dbBurgers) {
+            res.json("/api/burgers");
         });
     });
 
@@ -29,7 +33,7 @@ module.exports = function (app) {
                 }
             }).then(function (dbBurgers) {
                 res.json("/");
-            })
+            });
     });
     //final brace of module export
 };

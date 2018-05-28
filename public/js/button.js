@@ -6,19 +6,17 @@ $(function () {
     $(".create-form").on("submit", function (event) {
         event.preventDefault();
         let id = $(this).data("id");
-        let newBurger = {
-            burger_name: $("#burger").val().trim(),
-            devoured: 0
-        };
+        let  newBurger = {burger_name: $("#burger").val().trim()};
+        console.log(newBurger);
 
         //send POST request on click
         $.ajax("/api/burgers", {
             method: "POST",
-            url: "/api/burgers/"
+            url: "/api/burgers"
         }).then(
             function () {
                 console.log("New Burger Added!!");
-                location.reload();
+                //location.reload();
             }
         );
     });
