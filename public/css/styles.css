@@ -9,6 +9,7 @@ h1 {
     color: #010120;
     text-align: center;
     border-radius: 50px;
+    border: 4px solid brown;
 }
 
 li {
@@ -21,9 +22,11 @@ li {
     margin-top: 30%;
     margin-bottom: 5px;
     margin-left: 33%;
-    padding-bottom: 3px;
+    padding: 5px;
     border-radius: 50px;
+    border: 4px solid brown;
     width: 35%;
+    line-height: 25px;
 }
 
 .uneaten {
@@ -32,6 +35,7 @@ li {
     background-color: #F0CD59;
     padding: 3px;
     border-radius: 15%;
+    border: 4px solid brown;
     text-align: center;
 }
 
@@ -39,7 +43,8 @@ li {
     margin-right: 25px;
     float: right;
     background-color: #F0CD59;
-    padding: 3px;
-    border-radius: 15%;
+    padding: 5px;
+    border-radius: 50px;
+    border: 4px solid brown;
     text-align: center;
 }
