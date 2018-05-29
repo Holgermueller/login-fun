@@ -13,13 +13,12 @@ module.exports = function (app) {
     });
 
     // POST route
-    app.post("/api/burgers", function (req, res) {
-        let  newBurger; //= {burger_name: $("#burger").val().trim()};
-        db.Burgers.create({
-            burger_name: req.body.newBurger
-            //devoured: req.body.devoured
-        }).then(function (dbBurgers) {
-            res.json("/api/burgers");
+    app.post("/api/burgers/", function (req, res) {
+        db.Burgers.create(req.body).then(function (Burgers) {
+            console.log(Burgers._previousDataValues);
+            console.log(req.params);
+        }).catch(function (err) {
+            res.json(err);
         });
     });
 
@@ -33,6 +32,8 @@ module.exports = function (app) {
                 }
             }).then(function (dbBurgers) {
                 res.json("/");
+            }).catch(function (err) {
+                res.json(err);
             });
     });
     //final brace of module export
