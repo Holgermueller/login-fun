@@ -16,7 +16,7 @@ module.exports = function (app) {
     app.post("/api/burgers/", function (req, res) {
         db.Burgers.create(req.body).then(function (Burgers) {
             console.log(Burgers._previousDataValues);
-            console.log(req.params);
+            console.log(req.body.dbBurgers.burger_name);
         }).catch(function (err) {
             res.json(err);
         });
