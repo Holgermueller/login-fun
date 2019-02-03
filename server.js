@@ -2,6 +2,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const exphbs = require('express-handlebars');
+const compression = require('compression');
 const db = require("./models");
 
 //create port
@@ -9,6 +10,7 @@ const app = express();
 const PORT = process.env.PORT || 8080;
 
 //use public folder
+app.use(compression());
 app.use(express.static("public"));
 
 //use bodyparser
