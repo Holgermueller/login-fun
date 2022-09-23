@@ -10,7 +10,7 @@ app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-app.use("/", require("./routes"));
+//app.use("/", require("./routes"));
 app.use(express.static("public"));
 
 app.listen(PORT, () => {
