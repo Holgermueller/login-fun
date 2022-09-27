@@ -19,6 +19,13 @@ const testNumbers = (val) => {
   return re.test(val);
 };
 
+const testEmail = (email) => {
+  const re =
+    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+  return re.test(email);
+};
+
 const validateUsernameInput = () => {
   username.addEventListener("input", () => {
     const usernameInput = username.value;
@@ -29,11 +36,26 @@ const validateUsernameInput = () => {
   });
 };
 
-const validateEmail = () => {};
+const validateEmail = () => {
+  email.addEventListener("input", () => {
+    const emailToTest = email.value;
+
+    if (testEmail(emailToTest) === true) {
+      password.style.display = "inline-block";
+    } else {
+      password.style.display = "none";
+    }
+  });
+};
 
 const validatePassword = () => {};
 
 const confirmPasswords = () => {};
+
+const validateAll = () => {
+  validateUsernameInput();
+  validateEmail();
+};
 
 const hideElements = () => {
   email.style.display = "none";
@@ -42,5 +64,5 @@ const hideElements = () => {
   submit.style.display = "none";
 };
 
-validateUsernameInput();
+validateAll();
 hideElements();
