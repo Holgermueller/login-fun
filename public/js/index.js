@@ -30,7 +30,7 @@ const testNumbers = (val) => {
 };
 
 const testSpecial = (val) => {
-  const re = /[$&+,:;=?@#]/;
+  const re = /[$&+.-_:;=?@#]/;
 
   return re.test(val);
 };
@@ -46,29 +46,17 @@ const validateUsernameInput = () => {
   username.addEventListener("input", () => {
     const usernameInput = username.value;
 
-    if (testSpecial(usernameInput) === true) {
-      email.style.cssText = `display: inline-block;
-      transition: linear;
-      `;
+    if (
+      usernameInput.length >= 8 &&
+      testLowercase(usernameInput) === true &&
+      testUppercase(usernameInput) === true &&
+      testNumbers(usernameInput) === true &&
+      testSpecial(usernameInput) === true
+    ) {
+      email.style.display = "inline-block";
     } else {
       email.style.display = "none";
     }
-
-    // validations = [
-    //   testLength(usernameInput.length),
-    //   usernameInput.search(/[a-z]/) > -1,
-    //   usernameInput.serach(/[A-Z]/) > -1,
-    //   usernameInput.search(/[0-9]/) > -1,
-    //   usernameInput.search(/[$&+,:;=?@#]/) > -1,
-    // ];
-
-    // strength = validations.reduce((acc, cur) => acc + cur, 0);
-
-    // if (strength == 5) {
-    //   email.style.display = "inline-block";
-    // } else {
-    //   email.style.display = "none";
-    // }
   });
 };
 
@@ -84,13 +72,48 @@ const validateEmail = () => {
   });
 };
 
-const validatePassword = () => {};
+const validatePassword = () => {
+  password.addEventListener("input", () => {
+    const passwordToTest = password.value;
 
-const confirmPasswords = () => {};
+    if (
+      passwordToTest.length >= 8 &&
+      testLowercase(passwordToTest) === true &&
+      testUppercase(passwordToTest) === true &&
+      testNumbers(passwordToTest) === true &&
+      testSpecial(passwordToTest) === true
+    ) {
+      confirmPassword.style.display = "inline-block";
+    } else {
+      confirmPassword.style.display = "none";
+    }
+  });
+};
+
+const confirmPasswords = () => {
+  confirmPassword.addEventListener("input", () => {
+    const passwordToTest = password.value;
+    const passwordToConfirm = confirmPassword.value;
+
+    if (passwordToTest === passwordToConfirm) {
+      submit.style.display = "inline-block";
+    } else {
+      submit.style.display = "none";
+    }
+  });
+};
+
+const submiteForm = () => {
+  submit.addEventListener("click", () => {
+    console.log("click");
+  });
+};
 
 const validateAll = () => {
   validateUsernameInput();
   validateEmail();
+  validatePassword();
+  confirmPasswords();
 };
 
 const hideElements = () => {

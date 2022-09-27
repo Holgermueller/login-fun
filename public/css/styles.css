@@ -44,6 +44,12 @@ input[type="submit"] {
   box-shadow: -4px -4px 4px #ffffff, 4px 4px 4px #cbced1;
 }
 
+label {
+  width: 85%;
+  margin: 4% 0;
+  padding: 8px;
+}
+
 @keyframes fade-in {
   0% {
     opacity: 0;
