@@ -37,9 +37,20 @@ input {
   border: none;
   outline: none;
   box-shadow: inset 4px 4px 4px #cbced1, inset -4px -4px 4px #ffffff;
+  animation: fade-in 500ms linear;
 }
+
 input[type="submit"] {
   box-shadow: -4px -4px 4px #ffffff, 4px 4px 4px #cbced1;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .four-oh-four-section {
