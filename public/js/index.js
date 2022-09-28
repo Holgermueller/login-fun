@@ -4,13 +4,8 @@ let password = document.getElementById("password");
 let confirmPassword = document.getElementById("confirmPassword");
 let submit = document.getElementById("submit");
 
-let strength = 0;
-
-let validations = [];
-
 const testLength = (val) => {
   const length = 8;
-
   return length.test(val);
 };
 
@@ -31,7 +26,6 @@ const testNumbers = (val) => {
 
 const testSpecial = (val) => {
   const re = /[$&+.-_:;=?@#]/;
-
   return re.test(val);
 };
 
