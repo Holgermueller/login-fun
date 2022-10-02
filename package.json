@@ -1,24 +1,24 @@
 {
   "name": "registration-form",
   "version": "1.0.0",
-  "description": "A mysql burger app powered by sequelize.",
+  "description": "A neumorphic registration form.",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon server.js",
     "postcss:watch": "postcss public/css/styles.css --dir public/build/css --watch"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Holgermueller/Burger-sequel.git"
+    "url": "git+https://github.com/Holgermueller/registration-form.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Holgermueller/Burger-sequel/issues"
+    "url": "https://github.com/Holgermueller/registration-form/issues"
   },
-  "homepage": "https://github.com/Holgermueller/Burger-sequel#readme",
-  "dependencies": {},
+  "homepage": "https://github.com/Holgermueller/registration-form#readme",
+  "dependencies": {
+    "fireworks-js": "^2.0.2"
+  },
   "devDependencies": {
     "autoprefixer": "^10.4.12",
     "cssnano": "^5.1.13",

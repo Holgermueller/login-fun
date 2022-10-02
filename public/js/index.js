@@ -97,10 +97,15 @@ const confirmPasswords = () => {
   });
 };
 
-const submiteForm = () => {
-  submit.addEventListener("click", () => {
-    console.log("click");
-  });
+const submitForm = (event) => {
+  event.preventDefault();
+
+  const message = document.getElementById("message");
+  message.style.display = "inline-block";
+
+  const form = document.getElementById("loginCard");
+  form.style.display = "none";
+  console.log("click");
 };
 
 const validateAll = () => {
@@ -117,5 +122,5 @@ const hideElements = () => {
   submit.style.display = "none";
 };
 
-validateAll();
-hideElements();
+//validateAll();
+//hideElements();

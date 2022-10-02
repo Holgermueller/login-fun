@@ -40,7 +40,7 @@ input {
   animation: fade-in 500ms linear;
 }
 
-input[type="submit"] {
+input[type="button"] {
   box-shadow: -4px -4px 4px #ffffff, 4px 4px 4px #cbced1;
 }
 
@@ -59,17 +59,8 @@ label {
   }
 }
 
-.four-oh-four-section {
-  margin-top: calc(50vh - 5rem);
-  text-align: center;
-}
 .message {
   font-size: 6rem;
-}
-
-.reflection {
-  transform: rotateX(180deg) translateY(15px);
-  font-size: 6rem;
-  mask-image: linear-gradient(transparent 50%, white 90%);
-  filter: blur(4px);
+  position: absolute;
+  display: none;
 }

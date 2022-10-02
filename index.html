@@ -15,9 +15,9 @@
   </head>
   <body>
     <section class="login-section">
-      <div class="login-card">
+      <div id="loginCard" class="login-card">
         <h1>Register Here:</h1>
-        <form class="input-form" onsubmit="submitForm()">
+        <form class="input-form">
           <input
             type="text"
             name="Username"
@@ -43,9 +43,15 @@
             name="confirmPassword"
             id="confirmPassword"
           />
-          <input type="submit" value="Submit" id="submit" />
+          <input
+            onclick="submitForm(event)"
+            type="button"
+            value="Submit"
+            id="submit"
+          />
         </form>
       </div>
+      <div id="message" class="message">Oh no! You broke it!!</div>
     </section>
 
     <script src="./public/js/index.js"></script>
