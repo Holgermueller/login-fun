@@ -23,11 +23,33 @@ h1 {
 .tool-tip {
   font-size: 1.5rem;
   font-weight: bold;
-  text-align: right;
   border-radius: 15px;
   padding: 8px;
   width: max-content;
   box-shadow: -4px -4px 4px #ffffff, 4px 4px 4px #cbced1;
+}
+
+.tool-tip .tool-tip-text {
+  visibility: hidden;
+  background-color: black;
+  color: #cbced1;
+  position: absolute;
+  z-index: 1;
+  width: max-content;
+  border-radius: 15px;
+  padding: 8px;
+  text-align: center;
+  right: 25%;
+  margin-left: -60px;
+}
+
+.tool-tip:hover .tool-tip-text {
+  visibility: visible;
+}
+
+ul {
+  list-style: none;
+  padding: 0%;
 }
 
 .login-section {
@@ -44,9 +66,11 @@ h1 {
   background: #ecf0f3;
   box-shadow: -13px -13px 20px #ffffff, 13px 13px 20px #cbced1;
 }
+
 .input-form {
   text-align: center;
 }
+
 input {
   width: 85%;
   margin: 4% 0;
