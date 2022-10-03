@@ -103,9 +103,8 @@ const submitForm = (event) => {
   const message = document.getElementById("message");
   message.style.display = "inline-block";
 
-  const form = document.getElementById("loginCard");
-  form.style.display = "none";
-  console.log("click");
+  const page = document.getElementById("loginSection");
+  page.classList.add("broken");
 };
 
 const validateAll = () => {
