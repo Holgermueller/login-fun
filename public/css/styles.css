@@ -62,11 +62,15 @@ label {
 .message {
   font-size: 6rem;
   position: absolute;
-  display: none;
+  opacity: 0;
+}
+
+.reveal {
+  animation: reveal 6s ease-in-out forwards;
 }
 
 .broken {
-  animation: broken 10s linear 2s;
+  animation: broken 6s ease-in-out forwards;
 }
 
 @keyframes broken {
@@ -128,10 +132,25 @@ label {
     transform: rotate(14deg);
   }
   95% {
-    transform: rotate(-14%);
+    transform: rotate(14%);
   }
   100% {
     transform: rotate(14deg);
     background-color: red;
+  }
+}
+
+@keyframes reveal {
+  0% {
+    opacity: 0;
+  }
+  97% {
+    opacity: 0;
+  }
+  98% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
   }
 }

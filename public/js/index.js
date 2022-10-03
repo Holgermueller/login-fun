@@ -101,7 +101,7 @@ const submitForm = (event) => {
   event.preventDefault();
 
   const message = document.getElementById("message");
-  message.style.display = "inline-block";
+  message.classList.add("reveal");
 
   const page = document.getElementById("loginSection");
   page.classList.add("broken");
