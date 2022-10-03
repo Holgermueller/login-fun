@@ -41,11 +41,11 @@ const validateUsernameInput = () => {
     const usernameInput = username.value;
 
     if (
-      usernameInput.length >= 8 &&
       testLowercase(usernameInput) === true &&
       testUppercase(usernameInput) === true &&
       testNumbers(usernameInput) === true &&
-      testSpecial(usernameInput) === true
+      testSpecial(usernameInput) === true &&
+      usernameInput.length >= 8
     ) {
       email.style.display = "inline-block";
     } else {
@@ -121,5 +121,5 @@ const hideElements = () => {
   submit.style.display = "none";
 };
 
-//validateAll();
-//hideElements();
+validateAll();
+hideElements();
