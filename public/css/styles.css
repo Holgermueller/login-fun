@@ -4,14 +4,26 @@ html {
   margin: 0;
   background: #ecf0f3;
 }
+
+.login-section {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  align-items: center;
+}
+
+.login-card {
+  width: 55%;
+  margin: auto;
+  border-radius: 15px;
+  background: #ecf0f3;
+  box-shadow: -13px -13px 20px #ffffff, 13px 13px 20px #cbced1;
+}
+
 .grid-container {
   display: grid;
   grid-template-columns: auto auto;
   align-items: center;
-}
-
-.tool-tip-container {
-  justify-content: right;
 }
 
 h1 {
@@ -24,9 +36,11 @@ h1 {
   font-size: 1.5rem;
   font-weight: bold;
   border-radius: 15px;
-  padding: 8px;
+  padding: 4px 12px;
   width: max-content;
   box-shadow: -4px -4px 4px #ffffff, 4px 4px 4px #cbced1;
+  margin-left: auto;
+  margin-right: 8px;
 }
 
 .tool-tip .tool-tip-text {
@@ -50,21 +64,6 @@ h1 {
 ul {
   list-style: none;
   padding: 0%;
-}
-
-.login-section {
-  height: 100vh;
-  display: grid;
-  place-items: center;
-  align-items: center;
-}
-
-.login-card {
-  width: 55%;
-  margin: auto;
-  border-radius: 15px;
-  background: #ecf0f3;
-  box-shadow: -13px -13px 20px #ffffff, 13px 13px 20px #cbced1;
 }
 
 .input-form {
